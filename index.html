@@ -48,11 +48,31 @@ h2 {
     gap:25px;
 }
 .card {
-    background:#111;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 0 15px rgba(0,255,204,0.15);
+    background: #111;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,255,204,0.15);
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
 }
+
+.card img {
+    width: 100%;   /* adjust as needed */
+    height: auto;
+    display: block;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.card p {
+    margin: 0;
+    text-align: center;
+    font-size: 14px;
+}
+
 .crypto {
     display:flex;
     gap:20px;
@@ -89,7 +109,7 @@ footer {
 <body>
 
 <header>
-<img src="profile_pic.webp" alt="Daniel Idam">
+<img src="profile.jpg" alt="Daniel Idam">
 <h1>Daniel Idam</h1>
 <p>Electrical & Electronics Engineer | Web3 Guru | Crypto & Forex Trader</p>
 </header>
@@ -102,19 +122,35 @@ footer {
 <section>
 <h2>Engineering Expertise</h2>
 <div class="grid">
-<div class="card">Electrical Installations & Wiring</div>
-<div class="card">Power Distribution Systems</div>
-<div class="card">Solar & Inverter Systems</div>
-<div class="card">Fault Diagnosis & Repairs</div>
-<div class="card">Equipment Maintenance</div>
-<div class="card">Site Supervision</div>
+<div class="card">
+    <img src="Electrical.webp" alt="electrical"/>
+    <p>Electrical Installations & Wiring
+        </p>
+    </div>
+<div class="card">
+    <img src="power.webp" alt="power"/>
+    <p>Power Distribution Systems</p></div>
+<div class="card">
+    <img src="solar.webp" alt="Solar"/>
+    <p>Solar & Inverter Systems</p></div>
+<div class="card">
+    <img src="repair.webp" alt="repair"/>
+    <p>Fault Diagnosis & Repairs</p></div>
+<div class="card">
+    <img src="maitenance.webp" alt="Maintenance"/>
+    <p>Equipment Maintenance</p></div>
+<div class="card">
+    <img src="Supervision.webp" alt="Supervision"/>
+    <p>Site Supervision</p></div>
 </div>
 </section>
 
 <section>
 <h2>Web3 & Trading</h2>
 <div class="grid">
-<div class="card">Crypto Trading (Spot & Futures)</div>
+<div class="card">
+    <img src="spottrading.webp" alt="trading"/>
+    <p>Crypto Trading (Spot & Futures)</p></div>
 <div class="card">Forex Market Analysis</div>
 <div class="card">Blockchain & DeFi</div>
 <div class="card">Staking & Yield Farming</div>
@@ -142,7 +178,4 @@ footer {
 
 <footer>
 © 2026 Daniel Idam | Engineering & Web3 Solutions
-
 </footer>
-
-
