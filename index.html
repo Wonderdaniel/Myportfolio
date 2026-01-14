@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+/>
 <meta charset="UTF-8">
 <title>Daniel Idam | Engineer & Web3 Strategist</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -103,6 +106,27 @@ footer {
     text-decoration:none;
     box-shadow:0 0 20px rgba(0,255,0,0.5);
 }
+.Contact i{
+    color: #fff;
+    font-size: 22px;
+}
+.Contact p {
+    display: flex;
+    gap: 10px;
+}
+.crypto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.tradingview-widget-container {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,255,204,0.15);
+}
+
 </style>
 </head>
 
@@ -151,28 +175,91 @@ footer {
 <div class="card">
     <img src="spottrading.webp" alt="trading"/>
     <p>Crypto Trading (Spot & Futures)</p></div>
-<div class="card">Forex Market Analysis</div>
-<div class="card">Blockchain & DeFi</div>
-<div class="card">Staking & Yield Farming</div>
-<div class="card">NFTs & Digital Assets</div>
-<div class="card">Risk Management</div>
+<div class="card">
+    <img src="futures.webp" alt="futures trading"/>
+    <p>Forex Market Analysis</p></div>
+<div class="card">
+    <img src="defi.jpeg" alt="defi"/>
+    <p>Blockchain & DeFi</p></div>
+<div class="card">
+    <img src="staking.jpeg" alt="staking"/>
+    <p>Staking & Yield Farming</p></div>
+<div class="card">
+    <img src="nft.jpeg" alt="nft"/>
+    <p>NFTs & Digital Assets</p></div>
+<div class="card">
+    <img src="risk management.jpeg" alt="risk management"/>
+    <p>Risk Management</p></div>
 </div>
 </section>
 
 <section>
-<h2>Live Crypto Prices</h2>
-<div class="crypto">
-<div>Bitcoin (BTC): <span id="btc">Loading...</span></div>
-<div>Ethereum (ETH): <span id="eth">Loading...</span></div>
-<div>BNB: <span id="bnb">Loading...</span></div>
-</div>
+  <h2>Live Crypto Prices</h2>
+
+  <div class="crypto">
+    <!-- BTC Chart -->
+    <div class="tradingview-widget-container">
+      <div id="tradingview_btc"></div>
+      <div class="coin-name">Bitcoin (BTC)</div>
+    </div>
+
+    <!-- ETH Chart -->
+    <div class="tradingview-widget-container">
+      <div id="tradingview_eth"></div>
+      <div class="coin-name">Ethereum (ETH)</div>
+    </div>
+
+    <!-- SOL Chart -->
+    <div class="tradingview-widget-container">
+      <div id="tradingview_sol"></div>
+      <div class="coin-name">Solana (SOL)</div>
+    </div>
+
+    <!-- BNB Chart -->
+    <div class="tradingview-widget-container">
+      <div id="tradingview_bnb"></div>
+      <div class="coin-name">Binance Coin (BNB)</div>
+    </div>
+  </div>
 </section>
 
-<section>
+<!-- TradingView Script -->
+<script src="https://s3.tradingview.com/tv.js"></script>
+<script>
+  const coins = [
+    {id: "tradingview_btc", symbol: "BINANCE:BTCUSDT"},
+    {id: "tradingview_eth", symbol: "BINANCE:ETHUSDT"},
+    {id: "tradingview_sol", symbol: "BINANCE:SOLUSDT"},
+    {id: "tradingview_bnb", symbol: "BINANCE:BNBUSDT"}
+  ];
+
+  coins.forEach(coin => {
+    new TradingView.widget({
+      width: "100%",
+      height: 400,
+      symbol: coin.symbol,
+      interval: "15",
+      timezone: "Africa/Lagos",
+      theme: "dark",
+      style: "1",
+      locale: "en",
+      toolbar_bg: "#111",
+      enable_publishing: false,
+      allow_symbol_change: false,
+      container_id: coin.id
+    });
+  });
+</script>
+
+
+
+<section class="Contact">
 <h2>Contact</h2>
 <p>
-📧 wonderidamdaniel@gmail.com<br>
-📱 WhatsApp: +234 8023688631
+<a href="mailto:wonderidamdaniel@gmail.com"><i class="fa-solid fa-envelope"></i>
+</a><br>
+<a href="https://wa.me/+2348023688631"><i class="fa-brands fa-whatsapp"></i>
+</a>
 </p>
 </section>
 
